@@ -39,8 +39,8 @@ def create_app(test_config = None):
 	app.register_blueprint(main_page.bp)
 	app.add_url_rule('/', endpoint='index')
 
-	from . import game
-	register_api(api)
+	from . import api
+	api.register_blueprint(api.bp)
 
 	'''@app.route("/")
 	def main():
