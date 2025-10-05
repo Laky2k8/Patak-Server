@@ -1,6 +1,6 @@
 # Patak
 
-A federated game platform, basically Roblox but for indie games.
+**A federated game platform, basically Roblox but for indie games.**
 
 The main gist:
 - Users can create accounts that have coins, XP, level etc.
