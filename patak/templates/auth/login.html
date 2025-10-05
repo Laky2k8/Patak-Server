@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Login{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+	<div class="formGroup">
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username" required>
+	</div>
+	<br>
+
+	<div class="formGroup">
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password" required>
+	</div>
+	<br>
+
+	<input type="submit" class="cool-button" value="Login">
+
+  </form>
+
+  <p>Not registered? <a href="{{ url_for('auth.register') }}">Create an account</a></p>
+{% endblock %}

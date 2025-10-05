@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>Details of "{{ game['game_title'] }}"</h1>
+{% endblock %}
+
+{% block content %}
+	<p>
+		<b>Game Title: </b> {{ game['game_title'] }}
+	</p>
+
+	<p>
+		<b>Game URL: </b> 
+		<a href="{{ game['game_url'] }}" target="_blank">{{ game['game_url'] }}</a>
+	</p>
+
+	<p>
+		<b>Created by: </b> {{ game['creator'] }}
+	</p>
+
+	<p>
+		<b>Created on: </b> {{ game['created'].strftime('%Y-%m-%d') }}
+	</p>
+{% endblock %}

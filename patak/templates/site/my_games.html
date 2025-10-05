@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>Your games</h1>
+	{% if g.user %}
+		<a class="cool-button" class="cool-button"  href="{{ url_for('main_page.create_game') }}">New</a>
+		<br>
+		<br>
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	<div class="games">
+		{% if games|length == 0 %}
+			<p>You have not created any games yet.</p>
+		{% else %}
+
+			{% for game in games %}
+				<article class="game">
+						<div>
+							<h1>{{ game['game_title'] }}</h1>
+							<div class="about">by {{ game['creator'] }} on {{ game['created'].strftime('%Y-%m-%d') }}</div>
+						</div>
+						<br>
+						<br>
+
+						{% if g.user['id'] == game['author_id'] or g.user['is_admin'] %}
+							<a class="cool-button" href="{{ url_for('main_page.update_game', id=game['id']) }}">Edit</a>
+							<a class="cool-button" href="{{ url_for('main_page.game_details', id=game['id']) }}">Details</a>
+						{% endif %}
+
+						{% if game['game_url'] is not none  %}
+							<a class="play-button" href="{{ game['game_url'] }}">Play</a>
+						{% endif %}
+
+				</article>
+			{% endfor %}
+
+		{% endif %}
+	</div>
+
+{% endblock %}

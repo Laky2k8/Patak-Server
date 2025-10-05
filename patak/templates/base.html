@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Patak - {% block title %}{% endblock %}</title>
+
+
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='cool_button.css') }}">
+</head>
+<body>
+	<nav>
+		<h1>Patak</h1>
+		<ul>
+			{% if g.user %}
+				<li><span>{{ g.user["username"] }}</span></li>
+				<!-- Vertical separator between username and other nav items -->
+				<li class="separator"></li>
+
+				<li class="{{ 'active' if active_page == 'main' else '' }}">
+					<a href="{{ url_for('main_page.main') }}">Main</a>
+				  </li>
+				  <li class="{{ 'active' if active_page == 'my_games' else '' }}">
+					<a href="{{ url_for('main_page.my_games') }}">My Games</a>
+				</li>
+
+				{% block navbar %}{% endblock %}
+				<li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+			{% else %}
+				<li><a href="{{ url_for('auth.register') }}">Register</a></li>
+				<li><a href="{{ url_for('auth.login') }}">Login</a></li>
+			{% endif %}
+		</ul>
+	</nav>
+
+	<section class="content container-fluid">
+		<header>
+			{% block header %}{% endblock %}
+		  </header>
+		  {% for message in get_flashed_messages() %}
+			<div class="flash">{{ message }}</div>
+		  {% endfor %}
+		  {% block content %}{% endblock %}
+	</section>
+
+</body>
+</html>

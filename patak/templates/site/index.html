@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>Hello {{ user["username"] }}!</h1>
+{% endblock %}
+
+{% block content %}
+	<p>{{ user["coins"] }} 🪙</p>
+
+	<div class="formGroup">
+		<p style="margin-right: 5px;">Level {{ user["lvl"] }} </p>
+		<progress value="{{ user['xp'] }}" max="100"></progress>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Jersey+10&display=swap');
+
+body
+{
+	margin: 10px;
+
+	font-family: "Inter", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	background-color: #202020;
+	color: white;
+}
+
+h1
+{
+	font-family: "Jersey 10", sans-serif;
+	font-weight: 400;
+	font-size: 3em;
+	font-style: normal;
+}
+
+/* Navbar */
+nav { background: rgb(85, 85, 85); display: flex; align-items: center; padding: 0 0.5rem; }
+nav h1 { flex: auto; margin: 0; }
+nav h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }
+nav ul  { display: flex; list-style: none; margin: 0; padding: 0; }
+nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
+.separator { border-left: 1px solid #ccc; margin: 0 0.5rem; height: 1.5rem; align-self: center; }
+
+/* Main content */
+.content
+{
+	text-align: center;
+}
+
+.content li
+{
+	list-style: none;
+	padding: 0.25em 0;
+
+}
+
+/* Games */
+.games
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.game
+{
+	background-color: #333;
+	margin: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 20px;
+}
+
+/* Login */
+/* Form */
+.formGroup
+{
+	/* Force elements to be on the same line */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+}
+
+.formGroup label {
+    width: 120px;
+    text-align: right;
+    flex-shrink: 0;
+	margin-right: 5px;
+}
+
+input[type=text], input[type=number], input[type=password]
+{
+	width: 100%;
+	max-width: 400px;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid  light-dark(#ccc, #333);
+	border-radius: 32px;
+	box-sizing: border-box;
+
+	transition-duration: .2s;
+}
+
+input[type=text]:hover, input[type=number]:hover
+{
+	/* Inset shadow on hover */
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type=text]:focus, input[type=number]:focus
+{
+	/* Inset shadow on focus */
+	box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.4);
+	outline: none;
+}
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>Edit "{{ game['game_title'] }}"</h1>
+{% endblock %}
+
+{% block content %}
+	<form method="post">
+		<div class="formGroup">
+			<label for="username">Game Title</label>
+			<input name="title" id="title" type="text" value="{{ request.form['title'] or game['game_title']}}" required>
+		</div>
+		<br>
+		<div class="formGroup">
+			<label for="username">Game URL</label>
+			<input name="url" id="url" type="text" value="{{ request.form['url'] or game['game_url']}}" required>
+		</div>
+		<br>
+
+		<input type="submit" class="cool-button" value="Update">
+
+	</form>
+{% endblock %}

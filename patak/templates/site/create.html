@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>New game</h1>
+{% endblock %}
+
+{% block content %}
+	<form method="post">
+		<div class="formGroup">
+			<label for="username">Game Title</label>
+			<input name="title" id="title" type="text" value="{{ request.form['title'] }}" required>
+		</div>
+		<br>
+
+		<input type="submit" class="cool-button" value="Create">
+
+	</form>
+{% endblock %}
