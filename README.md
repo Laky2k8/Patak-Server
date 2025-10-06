@@ -10,3 +10,6 @@ The main gist:
 
 This links all games together into one web where every game shares this account system :)
 
+# How to use
+The site is available here: http://http://89.168.88.97:6000/ (sorry too broke for a custom domain for this)
+Clientside library available soon!
