@@ -40,7 +40,8 @@ def create_app(test_config = None):
 	app.add_url_rule('/', endpoint='index')
 
 	from . import api
-	api.register_blueprint(api.bp)
+	app.register_blueprint(api.bp)
+	api.init_limiter(app)
 
 	'''@app.route("/")
 	def main():

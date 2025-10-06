@@ -1,0 +1,17 @@
+{% extends 'api_base.html' %}
+
+{% block title %}
+<title>Patak - Authentication successful</title>
+{% endblock %}
+
+{% block header %}
+<h2>Connect to Patak</h2>
+<div class="game-info">
+	<h2>Successfully Connected!</h2>
+	<p>You can now close this window and return to the game.</p>
+	<script>
+		// Auto-close after 2 seconds
+		setTimeout(() => {window.close();}, 2000);
+	</script>
+</div>
+{% endblock %}

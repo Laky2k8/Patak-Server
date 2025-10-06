@@ -1,0 +1,36 @@
+{% extends 'api_base.html' %}
+
+{% block title %}
+<title>Patak - Log into {{ game_title }}</title>
+{% endblock %}
+
+{% block header %}
+<h2>Connect to Patak</h2>
+<div class="game-info">
+	<strong>{{ game_title }}</strong> wants to access your Patak account
+</div>
+{% endblock %}
+
+{% block content %}
+
+  <form method="post" action="{{ url_for('api.auth_login') }}">
+
+	<input type="hidden" name="token" value="{{ token }}">
+
+	<div class="formGroup">
+		<label for="username">Username</label>
+		<input type="text" name="username" id="username" required>
+	</div>
+	<br>
+
+	<div class="formGroup">
+		<label for="password">Password</label>
+		<input type="password" name="password" id="password" required>
+	</div>
+	<br>
+
+	<input type="submit" class="cool-button" value="Login and Connect">
+
+  </form>
+
+{% endblock %}
